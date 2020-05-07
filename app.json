@@ -1,0 +1,41 @@
+{
+  "name": "Automated Carousell Alerting System (Python)",
+  "description": "Check for listings, scrapes new listings automatically and alerts you on Telegram",
+  "repository": "https://github.com/2gavy/carousellalert-py.git",
+  "logo": "https://storage.googleapis.com/carousell-wordpress-files/1/2019/09/Carousell-logo-square.png",
+  "keywords": ["python", "requests", "beautifulsoup4", "pandas"],
+  "stack": "heroku-18",
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1
+    },
+    "web": {
+      "quantity": 0
+    }
+  },
+  "env": {
+    "PAGE": {
+      "description": "Carousell Page URL to monitor. Search for a page, sort by Recent listings. The URL should end with descending"
+    },
+    "RESELLERS": {
+      "description": "[OPTIONAL] Seller usernames you want to filter away. Separated by a comma and space.",
+      "value": "sellername1, sellername2",
+      "required": false
+    },
+    "BOT_TOKEN": {
+      "description": "Telegram Bot Token. Take note there is a colon in between Telegram token."
+    },
+    "BOT_CHATID": {
+      "description": "Telegram Chat to receive alerts. Depending on whether you created a group or a channel, minus sign might or might not be part of chat_id."
+    },
+    "SLEEP_TIME": {
+      "description": "Refreshes every 5 minute. Change 5 to adjust the duration of poll. It MUST be in this format. Please poll responsibly as we do not want to flood Carousell servers!",
+      "value": "*/5 * * * *"
+    }
+  }
+}
