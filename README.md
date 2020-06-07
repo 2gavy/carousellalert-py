@@ -1,4 +1,4 @@
-# carousellalert-py
+# carousellalert-py (Deprecated - shifted to JavaScript. Instead of checking elements, analyse JavaScript window object)
 The first Carousell Alert System using Python, Requests, BeautifulSoup4 and Pandas 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/2gavy/carousellalert-py)
